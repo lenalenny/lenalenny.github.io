@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<monthly>
+	<event>
+		<id>1</id>
+		<name>Here's an Event</name>
+		<startdate>2016-3-15</startdate>
+		<enddate>2016-3-17</enddate>
+		<starttime>12:00</starttime>
+		<endtime>2:00</endtime>
+		<color>#ffb128</color>
+		<url></url>
+	</event>
+
+	<event>
+		<id>2</id>
+		<name>Another Event</name>
+		<startdate>2016-3-15</startdate>
+		<enddate></enddate>
+		<starttime></starttime>
+		<endtime></endtime>
+		<color>#28cbff</color>
+		<url></url>
+	</event>
+
+	<event>
+		<id>3</id>
+		<name>Another Event</name>
+		<startdate>2016-3-29</startdate>
+		<enddate></enddate>
+		<starttime>9:00</starttime>
+		<endtime>10:00</endtime>
+		<color>#9cc370</color>
+		<url></url>
+	</event>
+
+	<event>
+		<id>4</id>
+		<name>Another Event</name>
+		<startdate>2016-3-2</startdate>
+		<enddate></enddate>
+		<starttime></starttime>
+		<endtime></endtime>
+		<color>#9f4b99</color>
+		<url></url>
+	</event>
+	
+		<event>
+		<id>5</id>
+		<name>Зал 1</name>
+		<startdate>2016-4-25</startdate>
+		<enddate>2016-4-28</enddate>
+		<starttime></starttime>
+		<endtime></endtime>
+		<color>#9f4b99</color>
+		<url></url>
+	</event>
+	
+	<event>
+		<id>6</id>
+		<name>Зал 2</name>
+		<startdate>2016-4-25</startdate>
+		<enddate></enddate>
+		<starttime></starttime>
+		<endtime></endtime>
+		<color>#9f1111</color>
+		<url></url>
+	</event>
+	
+	<event>
+		<id>7</id>
+		<name>Зал 3</name>
+		<startdate>2016-4-25</startdate>
+		<enddate></enddate>
+		<starttime></starttime>
+		<endtime></endtime>
+		<color>#111111</color>
+		<url></url>
+	</event>
+	
+	
+
+	
+	<event>
+		<id>9</id>
+		<name>Зал 5</name>
+		<startdate>2016-4-25</startdate>
+		<enddate></enddate>
+		<starttime>10:00</starttime>
+		<endtime>19:00</endtime>
+		<color>green</color>
+		<url></url>
+	</event>
+	
+	<event>
+		<id>8</id>
+		<name>Зал 4</name>
+		<startdate>2016-4-25</startdate>
+		<enddate></enddate>
+		<starttime>19:30</starttime>
+		<endtime>20:30</endtime>
+		<color>blue</color>
+		<url></url>
+	</event>
+	
+	<event>
+		<id>9</id>
+		<name>Зал 4</name>
+		<startdate>2016-4-20</startdate>
+		<enddate></enddate>
+		<starttime>19:30</starttime>
+		<endtime>20:30</endtime>
+		<color>blue</color>
+		<url></url>
+	</event>
+</monthly>
