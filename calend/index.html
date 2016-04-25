@@ -23,7 +23,7 @@
 		body, html {
 			padding:0px;
 			margin:0px;
-			background: url('images/bg.jpg') center;
+			background: green;
 			background-size:cover;
 			background-attachment: fixed;
 			text-align:center;
@@ -114,19 +114,10 @@
 </head>
 <body>
 <div class="page">
-		<h1>monthly.js</h1>
-		<h2>Example One - Event Calendar</h2>
+		<h1>Календарь</h1>
 		<div style="width:100%; max-width:600px; display:inline-block;">
 			<div class="monthly" id="mycalendar"></div>
 		</div>
-		<br><br>
-		<h2>Example Two - Date Picker</h2>
-		<div style="display:inline-block; width:250px;">
-			<input type="text" id="mytarget" value="Select Date">
-			<div class="monthly" id="mycalendar2"></div>
-		</div>
-		<br>
-		<a href="https://github.com/kthornbloom/Monthly" class="button">DOWNLOAD / DOCS</a>
 </div>
 <!-- JS ======================================================= -->
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -136,29 +127,15 @@
 
 		$('#mycalendar').monthly({
 			mode: 'event',
-			xmlUrl: 'events.xml'
+			xmlUrl: 'events.xml',
+			weekStart: 'Mon'
 		});
-
-		$('#mycalendar2').monthly({
-			mode: 'picker',
-			target: '#mytarget',
-			setWidth: '250px',
-			startHidden: true,
-			showTrigger: '#mytarget',
-			stylePast: true,
-			disablePast: true
-		});
-
-	switch(window.location.protocol) {
-	case 'http:':
-	case 'https:':
-	// running on a server, should be good.
-	break;
-	case 'file:':
-	alert('Just a heads-up, events will not work when run locally.');
-	}
-
 	});
+		
+		
+
+
+
 </script>
 </body>
 </html>

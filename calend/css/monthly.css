@@ -21,6 +21,7 @@
 .monthly-header-title {
 	font-size:.8em;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 /* wrapper for left button to make the clickable area bigger */
 .monthly-prev {
@@ -321,6 +322,7 @@
 	-webkit-transform:scale(0);
 		-ms-transform:scale(0);
 	        transform:scale(0);
+	  
 }
 
 /* Days in Events List */

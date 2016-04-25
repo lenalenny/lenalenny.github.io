@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
 <monthly>
-
-
 	<event>
 		<id>1</id>
 		<name>Here's an Event</name>
@@ -45,21 +43,21 @@
 		<color>#9f4b99</color>
 		<url></url>
 	</event>
-
-	<event>
-		<id>4</id>
-		<name>Another Event222</name>
+	
+		<event>
+		<id>5</id>
+		<name>Зал 1</name>
 		<startdate>2016-4-25</startdate>
-		<enddate></enddate>
+		<enddate>2016-4-28</enddate>
 		<starttime></starttime>
 		<endtime></endtime>
 		<color>#9f4b99</color>
 		<url></url>
 	</event>
-
-		<event>
-		<id>4</id>
-		<name>Another Event2223</name>
+	
+	<event>
+		<id>6</id>
+		<name>Зал 2</name>
 		<startdate>2016-4-25</startdate>
 		<enddate></enddate>
 		<starttime></starttime>
@@ -67,6 +65,40 @@
 		<color>#9f1111</color>
 		<url></url>
 	</event>
+	
+	<event>
+		<id>7</id>
+		<name>Зал 3</name>
+		<startdate>2016-4-25</startdate>
+		<enddate></enddate>
+		<starttime></starttime>
+		<endtime></endtime>
+		<color>#111111</color>
+		<url></url>
+	</event>
+	
+	
 
-
+	
+	<event>
+		<id>9</id>
+		<name>Зал 5</name>
+		<startdate>2016-4-25</startdate>
+		<enddate></enddate>
+		<starttime>10:00</starttime>
+		<endtime>19:00</endtime>
+		<color>green</color>
+		<url></url>
+	</event>
+	
+	<event>
+		<id>8</id>
+		<name>Зал 4</name>
+		<startdate>2016-4-25</startdate>
+		<enddate></enddate>
+		<starttime>19:30</starttime>
+		<endtime>20:30</endtime>
+		<color>blue</color>
+		<url></url>
+	</event>
 </monthly>

@@ -27,8 +27,8 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 				currentMonth = d.getMonth() + 1,
 				currentYear = d.getFullYear(),
 				currentDay = d.getDate(),
-				monthNames = options.monthNames || ["Jan", "Feb", "Mar", "Apr", "May", "June", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-				dayNames = options.dayNames || ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+				monthNames = options.monthNames || ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+				dayNames = options.dayNames || ['ВС','ПН','ВТ','СР','ЧТ','ПТ','СБ'];
 
 		if (options.maxWidth != false){
 			$('#'+uniqueId).css('maxWidth',options.maxWidth);
@@ -177,10 +177,11 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 							endTime = $(this).find('endtime').text(),
 							endSplit = endTime.split(":");
 							eventLink = '',
-							startPeriod = 'AM',
-							endPeriod = 'PM';
+							startPeriod = '',
+							endPeriod = '';
 
 						/* Convert times to 12 hour & determine AM or PM */
+							/*
 						if(parseInt(startSplit[0]) >= 12) {
 							var startTime = (startSplit[0] - 12)+':'+startSplit[1]+'';
 							var startPeriod = 'PM'
@@ -197,6 +198,7 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 						if(parseInt(endTime) == 0) {
 							var endTime = '12:'+endSplit[1]+'';
 						}
+						*/
 						if (eventURL){
 							var eventLink = 'href="'+eventURL+'"';
 						}
@@ -304,6 +306,16 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 				$('#'+uniqueId+' .monthly-header-title').prepend('<a href="#" class="monthly-cal" title="Back To Month View"><div></div></a>');
 			}
 		}
+		
+		$(document.body).on('click', '.monthly-header-title', function (e) {
+				var cssShow = $('.monthly-event-list').css('display');
+				if (cssShow == 'block') {
+					$('.monthly-event-list').hide();
+				} else {
+					$('.monthly-event-list').show();
+				}
+			});
+
 
 		// Advance months
 		$(document.body).on('click', '#'+uniqueId+' .monthly-next', function (e) {
