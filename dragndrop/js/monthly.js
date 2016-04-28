@@ -388,6 +388,18 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 			drop: function(event, ui) {
 				console.log($(this).parents(".monthly-day").attr("data-number"));
 				console.log(ui.draggable.attr("data-eventid"));
+				
+				$.post(
+						"ChangeEvent.php",
+						{
+							    date: $(this).parents(".monthly-day").attr("data-number"),
+							    eventid: ui.draggable.attr("data-eventid")
+						 },
+						 function (data) {
+							 console.log(data);
+						 }
+						 
+						 );
 
 		    }
 		    
