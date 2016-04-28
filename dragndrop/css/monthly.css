@@ -443,3 +443,8 @@
 		box-sizing: border-box;
 	}
 }
+
+
+.monthly-day-event > .monthly-indicator-wrap {
+    min-height: 65px;
+}

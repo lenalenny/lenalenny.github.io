@@ -376,9 +376,14 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 		//drag'n'drop
 
 
+		$(document.body).find('.monthly-event-indicator').draggable({
+			
+			snap: ".monthly-indicator-wrap, .monthly-event-indicator",
+	        snapMode: "both",
+	        snapTolerance: 15						
+			});
 
-
-		$('.monthly-indicator-wrap').droppable({
+		$(document.body).find('.monthly-indicator-wrap').droppable({
 			
 			drop: function(event, ui) {
 				console.log($(this).parents(".monthly-day").attr("data-number"));
@@ -387,6 +392,8 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 		    }
 		    
 		});
+		
+
 
 			
 		//Change month and plan view
