@@ -123,6 +123,7 @@
 	transition:.25s;
 	padding:0;
 	text-decoration: none;
+
 }
 
 /* Trick to make the days' width equal their height */
@@ -303,6 +304,7 @@
 	background:#7BA7CE;
 	font-size:0;
 	color:transparent;
+	z-index: 2;
 }
 
 .monthly-day .monthly-event-indicator:hover {
@@ -310,6 +312,7 @@
 }
 /* Listing of events under calendar */
 .monthly-event-list {
+	z-index: 3;
 	background: rgba(233, 235, 236, 0.9);
 	overflow: auto;
 	position: absolute;
@@ -441,6 +444,7 @@
 		line-height: 1em;
 		white-space: nowrap;
 		box-sizing: border-box;
+		z-index: 2;
 	}
 }
 

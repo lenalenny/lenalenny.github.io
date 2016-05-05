@@ -3,7 +3,7 @@
 	<event>
 		<id>1</id>
 		<name>Here's an Event</name>
-		<startdate>2016-3-15</startdate>
+		<startdate>2016-3-</startdate>
 		<enddate>2016-3-17</enddate>
 		<starttime>12:00</starttime>
 		<endtime>2:00</endtime>
@@ -14,7 +14,7 @@
 	<event>
 		<id>2</id>
 		<name>Another Event</name>
-		<startdate>2016-3-15</startdate>
+		<startdate>2016-3-25</startdate>
 		<enddate/>
 		<starttime/>
 		<endtime/>
@@ -25,7 +25,7 @@
 	<event>
 		<id>3</id>
 		<name>Another Event</name>
-		<startdate>2016-3-29</startdate>
+		<startdate>2016-3-5</startdate>
 		<enddate/>
 		<starttime>9:00</starttime>
 		<endtime>10:00</endtime>
@@ -36,7 +36,7 @@
 	<event>
 		<id>4</id>
 		<name>Another Event</name>
-		<startdate>2016-3-2</startdate>
+		<startdate>2016-3-10</startdate>
 		<enddate/>
 		<starttime/>
 		<endtime/>
@@ -47,7 +47,7 @@
 		<event>
 		<id>5</id>
 		<name>&#x417;&#x430;&#x43B; 1</name>
-		<startdate>2016-4-18</startdate>
+		<startdate>2016-4-29</startdate>
 		<enddate>2016-4-28</enddate>
 		<starttime/>
 		<endtime/>
@@ -58,7 +58,7 @@
 	<event>
 		<id>6</id>
 		<name>&#x417;&#x430;&#x43B; 2</name>
-		<startdate>2016-4-13</startdate>
+		<startdate>2016-4-</startdate>
 		<enddate/>
 		<starttime/>
 		<endtime/>
@@ -69,7 +69,7 @@
 	<event>
 		<id>7</id>
 		<name>&#x417;&#x430;&#x43B; 3</name>
-		<startdate>2016-4-25</startdate>
+		<startdate>2016-4-</startdate>
 		<enddate/>
 		<starttime/>
 		<endtime/>
@@ -83,7 +83,7 @@
 	<event>
 		<id>19</id>
 		<name>&#x417;&#x430;&#x43B; 5</name>
-		<startdate>2016-4-5</startdate>
+		<startdate>2016-4-</startdate>
 		<enddate/>
 		<starttime>10:00</starttime>
 		<endtime>19:00</endtime>
@@ -94,7 +94,7 @@
 	<event>
 		<id>8</id>
 		<name>&#x417;&#x430;&#x43B; 4</name>
-		<startdate>2016-4-25</startdate>
+		<startdate>2016-4-9</startdate>
 		<enddate/>
 		<starttime>19:30</starttime>
 		<endtime>20:30</endtime>
@@ -105,8 +105,8 @@
 	<event>
 		<id>9</id>
 		<name>&#x417;&#x430;&#x43B; 4</name>
-		<startdate>2016-4-5</startdate>
-		<enddate/>
+		<startdate>2016-5-2</startdate>
+		<enddate>2016-5-4</enddate>
 		<starttime>19:30</starttime>
 		<endtime>20:30</endtime>
 		<color>blue</color>

@@ -92,7 +92,58 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 					var day = i + 1; // Fix 0 indexed days
 					var dayNamenum = new Date(y, mZeroed, day, 0, 0, 0, 0).getDay()
 
-					$('#' + uniqueId + ' .monthly-day-wrap').append('<a href="#" class="m-d monthly-day monthly-day-event" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>');
+					
+					$('<a href="#" class="m-d monthly-day monthly-day-event" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>').droppable({
+						
+						drop: function(event, ui) { 
+							console.log($(this).attr("data-number"));
+							console.log(ui.draggable.attr("data-eventid"));
+							
+							var id = ui.draggable.attr("data-eventid");
+							var currentDay = ui.draggable.attr("data-day");
+							var event = $('[data-eventid="'+id+'"]');
+							var eventLength = $('[data-eventid="'+id+'"]').length / 2;
+							var start = ui.draggable.attr("data-firstday");
+							var end = parseInt(start) + parseInt(eventLength) - 1;
+							
+							/*
+							console.log("id" + id);
+							console.log("start " + start); 
+							console.log("end" + end);
+							console.log("eventLength" + eventLength);
+							console.log("currentDay" + currentDay);
+							*/
+							
+							if (eventLength > 1) {
+								//визуальный эффект перетаскивания
+							}
+							
+							var tale = 0;
+							if (parseInt(currentDay) == parseInt(end)) tale = 1;
+							console.log("tale " + tale);
+							
+							$.post(
+									"ChangeEvent.php",
+									{
+										    date: $(this).attr("data-number"),
+										    eventid: ui.draggable.attr("data-eventid"),
+										    tale: tale,
+									 },
+									 function (data) {
+										 console.log(data);
+									 }
+									 
+									 );
+							
+							
+							var setMonth = $('#' + uniqueId).data('setMonth'),
+								setYear = $('#' + uniqueId).data('setYear');
+							setMonthly(setMonth, setYear);
+							
+
+					    }
+					    
+					}).appendTo('#' + uniqueId + ' .monthly-day-wrap');
 					$('#' + uniqueId + ' .monthly-event-list').append('<div class="monthly-list-item" id="'+uniqueId+'day'+day+'" data-number="'+day+'"><div class="monthly-event-list-date">'+dayNames[dayNamenum]+'<br>'+day+'</div></div>');
 				}
 			} else {
@@ -102,9 +153,104 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 
 					// Check if it's a day in the past
 					if(((day < currentDay && m === currentMonth) || y < currentYear || (m < currentMonth && y == currentYear)) && options.stylePast == true){
-							$('#' + uniqueId + ' .monthly-day-wrap').append('<a href="#" class="m-d monthly-day monthly-day-pick monthly-past-day" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>');
+							$('<a href="#" class="m-d monthly-day monthly-day-pick monthly-past-day" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>').droppable({
+								
+								drop: function(event, ui) {
+									console.log($(this).parents(".monthly-day").attr("data-number"));
+									console.log(ui.draggable.attr("data-eventid"));
+									
+									var id = ui.draggable.attr("data-eventid");
+									var currentDay = ui.draggable.attr("data-day");
+									var event = $('[data-eventid="'+id+'"]');
+									var eventLength = $('[data-eventid="'+id+'"]').length / 2;
+									var start = ui.draggable.attr("data-firstday");
+									var end = parseInt(start) + parseInt(eventLength) - 1;
+									
+									/*
+									console.log("id" + id);
+									console.log("start " + start); 
+									console.log("end" + end);
+									console.log("eventLength" + eventLength);
+									console.log("currentDay" + currentDay);
+									*/
+									
+									if (eventLength > 1) {
+										//визуальный эффект перетаскивания
+									}
+									
+									var tale = 0;
+									if (parseInt(currentDay) == parseInt(end)) tale = 1;
+									console.log("tale " + tale);
+									
+									$.post(
+											"ChangeEvent.php",
+											{
+												    date: $(this).attr("data-number"),
+												    eventid: ui.draggable.attr("data-eventid"),
+												    tale: tale,
+											 },
+											 function (data) {
+												 console.log(data);
+											 }
+											 
+											 );
+									
+									var setMonth = $('#' + uniqueId).data('setMonth'),
+									setYear = $('#' + uniqueId).data('setYear');
+									setMonthly(setMonth, setYear);
+
+							    }
+							    
+							}).appendTo('#' + uniqueId + ' .monthly-day-wrap');;
 					} else {
-						$('#' + uniqueId + ' .monthly-day-wrap').append('<a href="#" class="m-d monthly-day monthly-day-pick" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>');
+						$('<a href="#" class="m-d monthly-day monthly-day-pick" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>').droppable({
+							
+							drop: function(event, ui) {
+								console.log($(this).parents(".monthly-day").attr("data-number"));
+								console.log(ui.draggable.attr("data-eventid"));
+								var id = ui.draggable.attr("data-eventid");
+								var currentDay = ui.draggable.attr("data-day");
+								var event = $('[data-eventid="'+id+'"]');
+								var eventLength = $('[data-eventid="'+id+'"]').length / 2;
+								var start = ui.draggable.attr("data-firstday");
+								var end = parseInt(start) + parseInt(eventLength) - 1;
+								
+								/*
+								console.log("id" + id);
+								console.log("start " + start); 
+								console.log("end" + end);
+								console.log("eventLength" + eventLength);
+								console.log("currentDay" + currentDay);
+								*/
+								
+								if (eventLength > 1) {
+									//визуальный эффект перетаскивания
+								}
+								
+								var tale = 0;
+								if (parseInt(currentDay) == parseInt(end)) tale = 1;
+								console.log("tale " + tale);
+								
+								$.post(
+										"ChangeEvent.php",
+										{
+											    date: $(this).attr("data-number"),
+											    eventid: ui.draggable.attr("data-eventid"),
+											    tale: tale,
+										 },
+										 function (data) {
+											 console.log(data);
+										 }
+										 
+										 );
+								
+								var setMonth = $('#' + uniqueId).data('setMonth'),
+								setYear = $('#' + uniqueId).data('setYear');
+								setMonthly(setMonth, setYear);
+
+						    }
+						    
+						}).appendTo('#' + uniqueId + ' .monthly-day-wrap');
 					}
 				}
 			}
@@ -222,10 +368,19 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 						if (!fullendDate && startMonth == setMonth && startYear == setYear) {
 							// Add Indicators
 							$('<div class="monthly-event-indicator"  data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'</div>').draggable({
-								
+								containment: ".monthly",
 								snap: ".monthly-indicator-wrap, .monthly-event-indicator",
 						        snapMode: "both",
-						        snapTolerance: 15,						
+						        snapTolerance: 15,
+						        
+						        drag: function() {
+						            $(this).css("box-shadow", "0px 0px 5px black");
+						            $(this).css("z-index", "20");
+						        },
+						        
+						        stop: function() {
+						        	$(this).css("box-shadow", "none");
+						        }
 								}).appendTo('#'+uniqueId+' *[data-number="'+startDay+'"] .monthly-indicator-wrap');
 							// Print out event list for single day event
 							var timeHtml = '';
@@ -245,22 +400,38 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 							for(var i = parseInt(startDay); i <= parseInt(endDay); i++) {
 								// If first day, add title
 								if (i == parseInt(startDay)) {
-									$('<div class="monthly-event-indicator" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'</div>')
+									$('<div class="monthly-event-indicator" data-firstday="'+ startDay +'" data-day="'+ i +'" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'</div>')
 									.draggable({
-										
+										containment: ".monthly",
 										snap: ".monthly-indicator-wrap, .monthly-event-indicator",
 								        snapMode: "both",
-								        snapTolerance: 15						
+								        snapTolerance: 15,
+								        drag: function() {
+								            $(this).css("box-shadow", "0px 0px 5px black");
+								            $(this).css("z-index", "20");
+								        },
+								        
+								        stop: function() {
+								        	$(this).css("box-shadow", "none");
+								        }
 										})
 									.appendTo('#'+uniqueId+' *[data-number="'+i+'"] .monthly-indicator-wrap');
 								} else {
 									
-									$('<div class="monthly-event-indicator" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'"></div>')									
+									$('<div class="monthly-event-indicator" data-firstday="'+ startDay +'" data-day="'+ i +'" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'"></div>')									
 									.draggable({
-										
+										containment: ".monthly",
 										snap: ".monthly-indicator-wrap, .monthly-event-indicator",
 								        snapMode: "both",
-								        snapTolerance: 15						
+								        snapTolerance: 15,
+								        drag: function() {
+								            $(this).css("box-shadow", "0px 0px 5px black");
+								            $(this).css("z-index", "20");
+								        },
+								        
+								        stop: function() {
+								        	$(this).css("box-shadow", "none");
+								        }
 										})
 									.appendTo('#'+uniqueId+' *[data-number="'+i+'"] .monthly-indicator-wrap');
 								}
@@ -273,21 +444,37 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 								// If first day, add title
 								if (i==1){
 
-									$('<div class="monthly-event-indicator" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'</div>')
+									$('<div class="monthly-event-indicator" data-firstday="'+ startDay +'" data-day="'+ i +'" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'</div>')
 									.draggable({
-										
+										containment: ".monthly",
 										snap: ".monthly-indicator-wrap, .monthly-event-indicator",
 								        snapMode: "both",
-								        snapTolerance: 15						
+								        snapTolerance: 15,
+								        drag: function() {
+								            $(this).css("box-shadow", "0px 0px 5px black");
+								            $(this).css("z-index", "20");
+								        },
+								        
+								        stop: function() {
+								        	$(this).css("box-shadow", "none");
+								        }
 										})
 									.appendTo('#'+uniqueId+' *[data-number="'+i+'"] .monthly-indicator-wrap');
 								} else {
-									$('<div class="monthly-event-indicator" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'"></div>')
+									$('<div class="monthly-event-indicator" data-firstday="'+ startDay +'" data-day="'+ i +'"  data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'"></div>')
 									.draggable({
-										
+										containment: ".monthly",
 										snap: ".monthly-indicator-wrap, .monthly-event-indicator",
 								        snapMode: "both",
-								        snapTolerance: 15						
+								        snapTolerance: 15,
+								        drag: function() {
+								            $(this).css("box-shadow", "0px 0px 5px black");
+								            $(this).css("z-index", "20");
+								        },
+								        
+								        stop: function() {
+								        	$(this).css("box-shadow", "none");
+								        }
 										})
 									.appendTo('#'+uniqueId+' *[data-number="'+i+'"] .monthly-indicator-wrap');
 								}
@@ -299,21 +486,37 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 							for(var i = parseInt(startDay); i <= dayQty; i++) {
 								// If first day, add title
 								if (i == parseInt(startDay)) {
-									$('<div class="monthly-event-indicator" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'</div>')
+									$('<div class="monthly-event-indicator" data-firstday="'+ startDay +'" data-day="'+ i +'" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'</div>')
 									.draggable({
-										
+										containment: ".monthly",
 										snap: ".monthly-indicator-wrap, .monthly-event-indicator",
 								        snapMode: "both",
-								        snapTolerance: 15						
+								        snapTolerance: 15,
+								        drag: function() {
+								            $(this).css("box-shadow", "0px 0px 5px black");
+								            $(this).css("z-index", "20");
+								        },
+								        
+								        stop: function() {
+								        	$(this).css("box-shadow", "none");
+								        }
 										})
 									.appendTo('#'+uniqueId+' *[data-number="'+i+'"] .monthly-indicator-wrap');
 								} else {
-									$('<div class="monthly-event-indicator" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'"></div>')
+									$('<div class="monthly-event-indicator" data-firstday="'+ startDay +'" data-day="'+ i +'" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'"></div>')
 									.draggable({
-										
+										containment: ".monthly",
 										snap: ".monthly-indicator-wrap, .monthly-event-indicator",
 								        snapMode: "both",
-								        snapTolerance: 15						
+								        snapTolerance: 15,
+								        drag: function() {
+								            $(this).css("box-shadow", "0px 0px 5px black");
+								            $(this).css("z-index", "20");
+								        },
+								        
+								        stop: function() {
+								        	$(this).css("box-shadow", "none");
+								        }
 										})
 									.appendTo('#'+uniqueId+' *[data-number="'+i+'"] .monthly-indicator-wrap');
 											
@@ -326,21 +529,36 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 							for(var i = 0; i <= dayQty; i++) {
 								// If first day, add title
 								if (i == 1){
-									$('<div class="monthly-event-indicator" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'</div>')
+									$('<div class="monthly-event-indicator" data-firstday="'+ startDay +'" data-day="'+ i +'" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'">'+eventTitle+'</div>')
 									.draggable({
-										
+										containment: ".monthly",
 										snap: ".monthly-indicator-wrap, .monthly-event-indicator",
 								        snapMode: "both",
-								        snapTolerance: 15						
+								        snapTolerance: 15,
+								        drag: function() {
+								            $(this).css("box-shadow", "0px 0px 5px black");
+								            $(this).css("z-index", "20");
+								        },
+								        
+								        stop: function() {
+								        	$(this).css("box-shadow", "none");
+								        }
 										})
 									.appendTo('#'+uniqueId+' *[data-number="'+i+'"] .monthly-indicator-wrap');
 								} else {
-									$('<div class="monthly-event-indicator" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'"></div>')
+									$('<div class="monthly-event-indicator" data-firstday="'+ startDay +'" data-day="'+ i +'" data-eventid="'+ eventId +'" style="background:'+eventColor+'" title="'+eventTitle+'"></div>')
 									.draggable({
-										
+										containment: ".monthly",
 										snap: ".monthly-indicator-wrap, .monthly-event-indicator",
 								        snapMode: "both",
-								        snapTolerance: 15						
+								        snapTolerance: 15,						        drag: function() {
+								        $(this).css("box-shadow", "0px 0px 5px black");
+							            $(this).css("z-index", "20");
+								        },
+								        
+								        stop: function() {
+								        	$(this).css("box-shadow", "none");
+								        }						
 										})
 									.appendTo('#'+uniqueId+' *[data-number="'+i+'"] .monthly-indicator-wrap');
 								}
@@ -377,12 +595,12 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 
 
 		$(document.body).find('.monthly-event-indicator').draggable({
-			
+			containment: ".monthly",
 			snap: ".monthly-indicator-wrap, .monthly-event-indicator",
 	        snapMode: "both",
 	        snapTolerance: 15						
 			});
-
+/*
 		$(document.body).find('.monthly-indicator-wrap').droppable({
 			
 			drop: function(event, ui) {
@@ -404,7 +622,7 @@ Monthly 2.0.6 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 		    }
 		    
 		});
-		
+		*/
 
 
 			
