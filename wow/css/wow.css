@@ -2239,6 +2239,8 @@ h1 {
 
 .ms-holiday-comp-block {
     width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .ms-holiday-comp-pic, .ms-holiday-goes-pic {
