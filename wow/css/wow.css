@@ -1641,6 +1641,10 @@ h1 {
     .ms-index-calc-h1 {
         padding-left: 0;
     }
+
+    .ms-holiday-goes-video {
+        width: 100%;
+    }
 }
 
 @media (max-width: 900px) {
@@ -1698,6 +1702,20 @@ h1 {
     .ms-index-opinions-quote {
         right: 0;
     }
+
+    .overlay-done-action {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .ms-holiday-faq-in {
+        width: 100%;
+    }
+
+    .ms-holiday-recall-form .ms-button {
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -1738,6 +1756,8 @@ h1 {
         margin-top: 20px;
         line-height: 1.2;
     }
+
+ 
 }
 
 @media (max-width: 600px) {
@@ -2173,7 +2193,63 @@ h1 {
             transform: rotate(-45deg) translate(12px, -14px);
 }
 
+.ms-works-block {
+    width: 100%;
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+}
 
+.reverse a {
+    text-decoration: none;
+    padding: 5px;
+    display: inline-block;
+    width: 100%;
+}
+
+.ms-works-block-pic {
+    width: 100%;
+}
+
+.ms-work-h2 {
+    text-align: center;
+}
+
+.ms-holiday-video-text {
+    padding-top: 30px;
+}
+
+.ms-holiday-recall input[type=text] {
+    margin: 0px 30px 0px 0px;
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 0;
+}
+
+
+
+
+.ms-holiday-comp {
+    padding-top: 20px;
+}
+
+.ms-holiday-video-text h1 {
+    font-size: 30px;
+}
+
+.ms-holiday-comp-block {
+    width: 100%;
+}
+
+.ms-holiday-comp-pic, .ms-holiday-goes-pic {
+    width: 100%;
+    height: 100vw;
+}
+
+.ms-holiday-fill-block {
+    width: 100%;
+    margin-top: 10px;
+}
 }
 
 
