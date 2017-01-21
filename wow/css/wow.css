@@ -2246,11 +2246,29 @@ h1 {
 .ms-holiday-comp-pic, .ms-holiday-goes-pic {
     width: 100%;
     height: 100vw;
+    margin-top: 5px;
 }
 
 .ms-holiday-fill-block {
     width: 100%;
     margin-top: 10px;
+    margin-right: 0;
+}
+
+.overlay-done-sub {
+    padding: 20px;
+}
+
+.overlay-done-top {
+    padding: 20px;
+}
+
+.overlay-done-sub-form input{
+    margin-top: 10px;
+}
+
+.overlay-done-top-h1 {
+    font-size: 40px;
 }
 }
 
