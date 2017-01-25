@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>6CE6D71D-55EA-4A71-97FC-DAA47055DE69</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Главная-страница" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main_page/Main_page_1440px" transform="translate(-1064.000000, -10016.000000)">
+            <g id="Инстаграм" transform="translate(0.000000, 8927.000000)">
+                <g id="Ссылки-на-соцсети" transform="translate(1064.000000, 1089.000000)">
+                    <g id="ico_socail-facebook">
+                        <ellipse id="background" fill="#334F8D" cx="24" cy="24" rx="24" ry="24"></ellipse>
+                        <path d="M21.2500742,18.2519722 L21.2500742,21.2747007 L19.0355267,21.2747007 L19.0355267,24.9709049 L21.2500742,24.9709049 L21.2500742,35.9547239 L25.7992251,35.9547239 L25.7992251,24.9712111 L28.8519165,24.9712111 C28.8519165,24.9712111 29.1378144,23.1989095 29.2763991,21.2610719 L25.8164269,21.2610719 L25.8164269,18.7338283 C25.8164269,18.3561021 26.3124223,17.8480093 26.8026497,17.8480093 L29.2811972,17.8480093 L29.2811972,14.000051 L25.9112158,14.000051 C21.1376241,13.9997958 21.2500742,17.6996752 21.2500742,18.2519722 L21.2500742,18.2519722 Z" id="Facebook" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,2334 @@
+@font-face {
+    font-family: "BloggerSans";
+    src: url("../fonts/Blogger_Sans.eot");
+    src: local("☺"), url("../fonts/Blogger_Sans.woff") format("woff"), url("../fonts/Blogger_Sans.ttf") format("truetype"), url("../fonts/Blogger_Sans.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BloggerSansBold";
+    src: url("../fonts/Blogger_Sans-Bold.eot");
+    src: local("☺"), url("../fonts/Blogger_Sans-Bold.woff") format("woff"), url("../fonts/Blogger_Sans-Bold.ttf") format("truetype"), url("../fonts/Blogger_Sans-Bold.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@-webkit-keyframes rotating
+/* Safari and Chrome */
+
+{
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    font-size: 16px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #000;
+    line-height: 22px;
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+form {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    color: #000;
+}
+
+a:link,
+a:visited {
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.reverse a {
+    text-decoration: none;
+}
+
+.reverse a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+option {
+    background: #fff;
+    color: #333;
+}
+
+select {
+    padding: 3px;
+    border: none;
+    vertical-align: middle;
+    color: #333;
+}
+
+a.ajax,
+a.ajax:visited {
+    border-bottom: dotted 1px #fff;
+    text-decoration: none;
+}
+
+a.ajax:hover,
+.b2 a:hover,
+a.photos-ajax:hover {
+    border: none;
+}
+
+.pages {
+    font: normal 24px "BloggerSans";
+    margin-bottom: 30px;
+}
+
+.pages span,
+.pages a {
+    padding: 6px;
+    background: #fff;
+    padding-bottom: 1px;
+    margin-right: 6px;
+    color: #333;
+}
+
+.pages span {
+    color: #fff;
+    background: #dc0e85;
+    border-radius: 8px;
+    padding: 6px 10px 6px 10px;
+}
+
+.radio {
+    display: none;
+}
+
+.radio + label span {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+    background: url(../svg/ico_radio.svg) no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.radio:checked + label span {
+    background: url(../svg/ico_radio_checked.svg) no-repeat center center;
+    background-size: contain;
+}
+
+#content {
+    min-height: 500px;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: table;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 1000;
+    position: fixed;
+    opacity: 0;
+    top: 0px;
+    left: 0px;
+}
+
+.overlay-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 100%;
+}
+
+.overlay-block {
+    width: 485px;
+    background: #fff;
+    background: #f2ebe2;
+    padding: 60px 80px 60px 80px;
+    position: relative;
+    text-align: center;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.overlay-block input[type=text] {
+    margin-bottom: 10px;
+    width: 270px;
+}
+
+.overlay-block .ms-button {
+    width: 270px;
+}
+
+.overlay-about {
+    margin: 20px 0px 25px 0px;
+    font-size: 18px;
+}
+
+.overlay-h1 {
+    font: normal 40px "BloggerSansBold";
+    line-height: 35px;
+}
+
+.overlay-close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url(../svg/ico_close.svg) no-repeat center center;
+    background-size: 20px;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.overlay-done {
+    background: #f5f5f5;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    overflow: auto;
+    display: none;
+}
+
+.overlay-done-top {
+    background: #00b4ce;
+    padding: 60px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.overlay-done-top a {
+    color: #fff;
+}
+
+.overlay-done-top-back {
+    text-align: left;
+}
+
+.overlay-done-top-logo {
+    width: 199px;
+    height: 135px;
+    background: url(../svg/logo_white.svg) no-repeat center center;
+    float: right;
+}
+
+.overlay-done-top-h1 {
+    font: normal 80px "BloggerSansBold";
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+.overlay-done-top-h2 {
+    font: normal 40px "BloggerSansBold";
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+
+.overlay-done-top-more {
+    text-align: center;
+}
+
+.overlay-done-social {
+    margin: 20px 0px 40px 0px;
+}
+
+.overlay-done-social a {
+    margin: 0px 6px 0px 6px;
+}
+
+.overlay-done-sub {
+    max-width: 715px;
+    padding: 40px 100px 40px 100px;
+    line-height: 1.4;
+    display: inline-block;
+    background: #f2ebe2;
+    border-radius: 6px;
+}
+
+.overlay-done-sub-form {
+    margin: 25px 0px 60px 0px;
+}
+
+.overlay-done-sub-form input[type=text] {
+    margin-right: 10px;
+}
+
+.overlay-done-action {
+    display: inline-block;
+    width: 33.33%;
+    margin-bottom: 60px;
+    margin-top: 60px;
+    padding: 0px 50px 0px 50px;
+    vertical-align: top;
+}
+
+.overlay-done-action-h1 {
+    color: #dc0e85;
+    font: normal 24px "BloggerSansBold";
+    margin-bottom: 10px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+input[type=text] {
+    padding: 15px 20px 15px 20px;
+    width: 270px;
+    font-size: 18px;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    vertical-align: middle;
+}
+
+.ms-button,
+input[type=button],
+input[type=submit] {
+    font: normal 18px "BloggerSans";
+    background-color: #dc0e85;
+    border: none;
+    border-radius: 8px;
+    border-bottom: solid 4px #b6086d;
+    color: #fff;
+    display: inline-block;
+    padding: 13px 35px 13px 35px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.ms-button.disabled,
+input[type=button].disabled,
+input[type=submit].disabled {
+    background: #d2ccc5;
+    border-bottom-color: #ccc6bf;
+    color: #c1bbb4;
+    opacity: 1 !important;
+    cursor: auto;
+}
+
+.ms-title {
+    font: normal 44px "BloggerSansBold";
+    margin-bottom: 15px;
+}
+
+.ms-marker {
+    background: url(../svg/ico_marker_center.svg) no-repeat left 6px;
+    padding-left: 28px;
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+
+.ms-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0px;
+}
+
+.ms-video iframe {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.ms-top {
+    background: #fff;
+    padding: 12px 60px 12px 60px;
+}
+
+.ms-top-logo,
+.ms-top-menu,
+.ms-top-phone {
+    width: 14%;
+    position: relative;
+    float: left;
+}
+
+.ms-top-logo {
+    height: 78px;
+}
+
+.ms-top-menu {
+    width: 48%;
+    padding-top: 30px;
+}
+
+.ms-top-menu a {
+    color: #dc0e85;
+    margin-right: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    border-bottom: solid 1px rgba(220, 14, 133, 0);
+}
+
+.ms-top-menu a:hover {
+    text-decoration: none;
+}
+
+.ms-top-phone {
+    width: 38%;
+    text-align: right;
+    padding-top: 11px;
+}
+
+.ms-top-phone-order {
+    width: 165px;
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.ms-logo {
+    width: 148px;
+    height: 100px;
+    background: url(../svg/logo.svg) no-repeat;
+    background-size: cover;
+}
+
+.ms-top-logo .ms-logo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 11;
+}
+
+.ms-navi {
+    position: relative;
+}
+
+.ms-navi div {
+    background: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    padding: 11px 0px 11px 0px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+
+.ms-navi i:after {
+    content: "·";
+    margin: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+.ms-index-video {
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+}
+
+.ms-index-video h1 {
+    color: #fff;
+}
+
+.ms-index-video-file {
+    height: 100%;
+    min-width: 100%;
+    min-height: 62.5vw;
+    opacity: 0.5;
+}
+
+.ms-index-video-pic {
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ms-index-video-text {
+    padding: 240px 100px 0px 100px;
+    line-height: 1;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 4;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 28px;
+    text-align: center;
+}
+
+.ms-index-video-text h1 {
+    font: normal 100px "BloggerSansBold";
+    margin: 0px;
+    margin-bottom: 40px;
+}
+
+.ms-index-services {
+    padding: 100px 0px 60px 0px;
+}
+
+h1,
+.ms-index-services-h1,
+.ms-index-holidays-h1,
+.ms-index-make-h1,
+.ms-index-center-h1,
+.ms-index-team-h1,
+.ms-index-insta-h1,
+.ms-index-opinions-h1,
+.ms-index-contacts-h1,
+.ms-holiday-comp-h1,
+.ms-holiday-goes-h1,
+.ms-holiday-faq-h1,
+.ms-holiday-fill-h1 {
+    font: normal 100px "BloggerSansBold";
+    color: #000;
+    line-height: 1;
+    margin-bottom: 45px;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+.ms-index-services-block {
+    float: left;
+    width: 25%;
+    padding: 200px 60px 0px 0px;
+    background-position: left 30px;
+    background-repeat: no-repeat;
+}
+
+.ms-index-services-block:last-child {
+    padding-right: 0px;
+    background-position: left top !important;
+}
+
+.ms-index-services-block a {
+    color: #dc0e85;
+}
+
+.ms-index-services-block-h1 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.ms-index-services-block-about {
+    margin-bottom: 20px;
+}
+
+.ms-index-banner {
+    padding: 100px 0px 60px 0px;
+    color: #fff;
+}
+
+.ms-index-banner-vector,
+.ms-index-banner-raster {
+    border-radius: 10px;
+    background: #00b4ce;
+    position: relative;
+    min-height: 700px;
+}
+
+.ms-index-banner-raster {
+    background: #000;
+    position: relative;
+}
+
+.ms-index-banner-pic {
+    background-size: cover;
+    background-position: top center;
+    min-height: 700px;
+    border-radius: 10px;
+    opacity: 0.6;
+}
+
+.ms-index-banner-vector-stars {
+    background: url(../svg/bg_stars.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: -40px;
+    left: 450px;
+    z-index: 2;
+    width: 665px;
+    height: 820px;
+    -webkit-animation: rotating 40s linear infinite;
+    -moz-animation: rotating 40s linear infinite;
+    -ms-animation: rotating 40s linear infinite;
+    -o-animation: rotating 40s linear infinite;
+    animation: rotating 40s linear infinite;
+}
+
+.ms-index-banner-vector-content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 70px 80px 30px 60px;
+    z-index: 3;
+}
+
+.ms-index-banner-vector-when,
+.ms-index-banner-vector-h1 {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    font: bold 32px "BloggerSans";
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.ms-index-banner-vector-h1 {
+    font: normal 100px "BloggerSansBold";
+}
+
+.ms-index-banner-vector-list {
+    margin-top: 45px;
+    font-size: 24px;
+}
+
+.ms-index-banner-vector-list div {
+    background: url(../svg/ico_star.svg) no-repeat center left;
+    padding-left: 30px;
+    margin-bottom: 17px;
+}
+
+.ms-index-banner-vector-price {
+    margin-top: 60px;
+    font: normal 60px "BloggerSansBold";
+    text-transform: uppercase;
+}
+
+.ms-index-banner-vector-price span {
+    opacity: 0.5;
+    text-decoration: line-through;
+    margin-right: 15px;
+}
+
+.ms-index-banner-vector-call {
+    background: #dc0e85;
+    border-radius: 10px;
+    display: inline-block;
+    float: right;
+    padding: 20px 40px 20px 40px;
+    margin-top: -90px;
+    font: normal 30px "BloggerSansBold";
+    text-transform: none;
+}
+
+.ms-index-banner-vector-cert {
+    background: url(../svg/ico_cert.svg) no-repeat top right;
+    width: 310px;
+    padding-right: 100px;
+    float: right;
+    height: 160px;
+    font-size: 24px;
+    line-height: 1.4;
+    margin-top: -140px;
+}
+
+.ms-index-holidays {
+    padding: 100px 0px 100px 0px;
+}
+
+.ms-index-holidays-h1 {
+    text-align: center;
+}
+
+.ms-index-holidays-more {
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.25;
+    margin-bottom: 60px;
+}
+
+.ms-index-holidays-block {
+    float: left;
+    width: 50%;
+    vertical-align: top;
+    margin-bottom: 65px;
+}
+
+.ms-index-holidays-block-pic {
+    width: 630px;
+    height: 440px;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+.ms-index-holidays-block a:last-child {
+    color: #dc0e85;
+    font: normal 40px "BloggerSansBold";
+}
+
+.ms-index-calc {
+    background: #00b4ce;
+    padding: 60px 60px 50px 60px;
+}
+
+.ms-index-calc-h1 {
+    height: 170px;
+    line-height: 1;
+    background: url(../svg/ico_calc.svg) no-repeat 75% center;
+    background-size: contain;
+    font: normal 60px "BloggerSansBold";
+    color: #fff;
+    padding-left: 120px;
+}
+
+.ms-index-calc-form {
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 30px;
+    position: relative;
+    font-size: 18px;
+}
+
+.ms-index-calc-form-in {
+    padding: 70px 100px 40px 100px;
+}
+
+.ms-index-calc-form .disabled {
+    opacity: 0.3;
+}
+
+.ms-index-calc-form-arrow {
+    position: absolute;
+    top: -18px;
+    left: 220px;
+    background: url(../svg/ico_arrow.svg) no-repeat center bottom;
+    z-index: 2;
+    width: 75px;
+    height: 20px;
+}
+
+.ms-index-calc-form-block {
+    float: left;
+    width: 33.33%;
+    padding-right: 60px;
+}
+
+.ms-index-calc-form-block:last-child {
+    padding: 0px;
+}
+
+.ms-index-calc-form-step {
+    background: url(../svg/bg_step.svg) no-repeat center center;
+    width: 81px;
+    height: 34px;
+    padding: 7px 0px 0px 15px;
+    color: #fff;
+    margin-bottom: 9px;
+}
+
+.ms-index-calc-form-what {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.ms-index-calc-form-radio {
+    margin-bottom: 15px;
+}
+
+.ms-index-calc-call {
+    background: #f2ebe2;
+    text-align: center;
+    height: 120px;
+    padding: 33px 15px 0px 15px;
+    font-size: 18px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: none;
+}
+
+.ms-index-calc-call img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.ms-index-calc-call input[type=text] {
+    margin-left: 18px;
+    margin-right: 10px;
+}
+
+.ms-holiday-recall input[type=text] {
+    margin: 0px 30px 0px 0px;
+}
+
+.ms-index-calc-call-loader {
+    padding-top: 12px;
+}
+
+.ms-index-calc-call-form {
+    display: none;
+}
+
+.ms-index-calc-done {
+    display: none;
+}
+
+.ms-index-calc-done div {
+    font: normal 60px "BloggerSansBold";
+    margin-bottom: 12px;
+}
+
+.ms-index-make {
+    padding: 100px 30px 100px 130px;
+}
+
+.ms-index-make-h1,
+.ms-index-center-h1 {
+    font-size: 80px;
+}
+
+.ms-index-make-param {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.ms-index-make-block {
+    display: inline-block;
+    width: 170px;
+    margin-right: 30px;
+    margin-bottom: 25px;
+    vertical-align: top;
+}
+
+.ms-index-make-block a {
+    color: #dc0e85;
+}
+
+.ms-index-make-block-pic {
+    width: 170px;
+    height: 170px;
+    background-position: top center;
+    background-size: cover;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.ms-index-center {
+    padding: 80px 0px 60px 0px;
+    background: #fffde7;
+}
+
+.ms-index-center-l,
+.ms-index-center-r {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    margin: 30px 0px 40px 0px;
+}
+
+.ms-index-center-r {
+    width: 30%;
+    padding-left: 60px;
+    font-size: 18px;
+}
+
+.ms-index-center-feat {
+    background: url(../svg/ico_marker_center.svg) no-repeat left 5px;
+    padding: 0px 0px 30px 30px;
+}
+
+.ms-index-center-feat:first-child {
+    background-position: left 10px;
+}
+
+.ms-index-center-more-l,
+.ms-index-center-more-r {
+    display: inline-block;
+    vertical-align: top;
+    width: 35%;
+    font-size: 24px;
+}
+
+.ms-index-center-more-r {
+    width: 65%;
+    padding-left: 100px;
+}
+
+.ms-index-center-more-adress {
+    margin-top: 10px;
+    color: #dc0e85;
+    font: normal 60px "BloggerSansBold";
+    line-height: 1;
+}
+
+.ms-index-center-more-adress a {
+    text-decoration: none;
+    border-bottom: dotted 1px #dc0e85;
+    color: #dc0e85;
+}
+
+.ms-index-center-more-adress a:hover {
+    border: none;
+    text-decoration: none;
+}
+
+.ms-index-center-bubble {
+    box-shadow: 5px 5px 10px 0 #dbcfab;
+    background: #fff;
+    padding: 25px 40px 25px 40px;
+    display: inline-block;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    line-height: 1.25;
+}
+
+.ms-index-center-bubble span {
+    color: #dc0e85;
+}
+
+.ms-index-center-bubble:last-child {
+    float: right;
+}
+
+.yellowed {
+    background: #fffde7;
+}
+
+.ms-index-team {
+    padding: 100px 0px 100px 0px;
+}
+
+.ms-index-team-h1 {
+    font-size: 80px;
+}
+
+.ms-index-team-block {
+    float: left;
+    width: 50%;
+    padding-right: 60px;
+}
+
+.ms-index-team-block-pic {
+    background-position: center center;
+    background-size: cover;
+    width: 280px;
+    height: 280px;
+    margin-left: 100px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.ms-index-team-block-quote {
+    width: 108px;
+    height: 77px;
+    position: absolute;
+    bottom: 0px;
+    left: -40px;
+    background: url(../svg/ico_quote_blue.svg) no-repeat center center;
+}
+
+.ms-index-team-block-speach {
+    line-height: 1.45;
+    color: #00b4ce;
+    font-size: 28px;
+    margin-top: 40px;
+}
+
+.ms-index-team-block-who {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.ms-index-team-block:last-child .ms-index-team-block-quote {
+    background-image: url(../svg/ico_quote_pink.svg);
+}
+
+.ms-index-team-block:last-child .ms-index-team-block-speach {
+    color: #dc0e85;
+}
+
+.ms-index-insta {
+    padding: 100px 0px 100px 0px;
+    border-top: solid 1px #e0e0e0;
+    text-align: center;
+}
+
+.ms-index-insta-h1,
+.ms-index-contacts-h1 {
+    font-size: 80px;
+}
+
+.ms-index-insta-block {
+    width: 256px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.ms-index-insta-pic {
+    background-position: center center;
+    width: 256px;
+    height: 256px;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    position: relative;
+    border-radius: 6px;
+}
+
+.ms-index-insta-likes {
+    background: url(../svg/ico_likes.svg) no-repeat left 4px;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    padding-left: 30px;
+    font: normal 20px "BloggerSansBold";
+    color: #fff;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.ms-index-insta-l,
+.ms-index-insta-r {
+    display: inline-block;
+    vertical-align: top;
+    width: 65%;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.ms-index-insta-l {
+    font-size: 44px;
+    line-height: 1.2
+}
+
+.ms-index-insta-l a,
+.ms-index-insta-r a {
+    color: #dc0e85;
+}
+
+.ms-index-insta-r {
+    width: 35%;
+    padding-left: 60px;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.ms-index-insta-social {
+    margin-bottom: 15px;
+}
+
+.ms-index-insta-social a {
+    margin-right: 12px;
+}
+
+.ms-index-insta-social div,
+.overlay-done-social div {
+    width: 48px;
+    height: 48px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+}
+
+.ms-index-opinions {
+    padding: 100px 0px 100px 0px;
+    border-top: solid 1px #e0e0e0;
+}
+
+.ms-index-opinions-h1 {
+    font-size: 80px;
+    text-align: center;
+}
+
+.ms-index-opinions-h2 {
+    color: #dc0e85;
+    font: normal 40px "BloggerSansBold";
+}
+
+.ms-index-opinions-l,
+.ms-index-opinions-r {
+    float: left;
+    width: 45%;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.ms-index-opinions-l {
+    padding-top: 12px;
+}
+
+.ms-index-opinions-r {
+    width: 55%;
+    padding-left: 80px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.ms-index-opinions-quote {
+    position: absolute;
+    top: 40px;
+    right: -50px;
+    background: url(../svg/ico_quote_pink.svg) no-repeat center center;
+    width: 108px;
+    height: 77px;
+    z-index: 2;
+}
+
+.ms-index-opinions-text {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    width: 80%;
+}
+
+.ms-index-opinions-who a {
+    color: #dc0e85;
+}
+
+.ms-index-contacts {
+    padding-top: 100px;
+    margin: 0px;
+    border-top: solid 1px #e0e0e0;
+    text-align: center;
+}
+
+.ms-index-contacts-text {
+    font-size: 24px;
+    margin-bottom: 40px;
+    line-height: 1.3;
+}
+
+#map {
+    height: 720px;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.ms-bottom {
+    padding: 30px 0px 50px 0px;
+    font-size: 18px;
+}
+
+.ms-bottom div {
+    float: left;
+}
+
+.ms-bottom-menu {
+    margin-left: 40px;
+}
+
+.ms-bottom-menu a {
+    color: #dc0e85;
+    margin-right: 22px;
+    text-decoration: none;
+    border-bottom: solid 1px rgba(220, 14, 133, 0);
+}
+
+.ms-bottom-tegra {
+    float: right !important;
+}
+
+
+/*holiday*/
+
+.ms-holiday-id {
+    display: none;
+}
+
+.ms-holiday-video-text {
+    font-size: 28px;
+    padding: 100px 30px 0px 30px;
+    position: absolute;
+    top: 0px;
+    line-height: 1;
+    left: 0px;
+    width: 100%;
+    z-index: 4;
+    text-align: center;
+}
+
+.ms-holiday-video-text h1 {
+    font: normal 80px "BloggerSansBold";
+    line-height: 1.1;
+    margin: 20px 0px 280px 0px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ms-holiday-recall {
+    padding: 40px 0px 40px 0px;
+    background: #00b4ce;
+    text-align: center;
+    color: #fff;
+}
+
+.ms-holiday-recall-tip {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.ms-holiday-comp {
+    padding: 100px 0px 100px 0px;
+    text-align: center;
+}
+
+.ms-holiday-comp-h1 {
+    font-size: 80px;
+}
+
+.ms-holiday-comp-block {
+    width: 400px;
+    display: inline-block;
+    margin: 0px 30px 60px 30px;
+}
+
+.ms-holiday-comp-pic,
+.ms-holiday-goes-pic {
+    width: 400px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.ms-holiday-comp-about {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.ms-holiday-goes {
+    padding: 100px 0px 100px 0px;
+    border-top: solid 1px #e0e0e0;
+    text-align: center;
+}
+
+.ms-holiday-goes .ms-button {
+    margin-top: 60px;
+}
+
+.ms-holiday-goes-video {
+    width: 850px;
+    display: inline-block;
+    margin-bottom: 60px;
+}
+
+.ms-holiday-goes-h1 {
+    font-size: 80px;
+}
+
+.ms-holiday-goes-pic {
+    width: 440px;
+    height: 320px;
+    display: inline-block;
+    margin-top: -6px;
+}
+
+.ms-holiday-faq {
+    padding: 100px 0px 100px 0px;
+    text-align: center;
+}
+
+.ms-holiday-faq-in {
+    width: 760px;
+    display: inline-block;
+    text-align: left;
+}
+
+.ms-holiday-faq-h1 {
+    font-size: 80px;
+    text-align: center;
+}
+
+.ms-holiday-faq-what {
+    margin-bottom: 30px;
+}
+
+.ms-holiday-faq-what a {
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 1.2;
+    color: #dc0e85;
+    border-bottom: dashed 1px #dc0e85;
+    cursor: pointer;
+}
+
+.ms-holiday-faq-what:hover {
+    border: none;
+}
+
+.ms-holiday-faq-that {
+    font-size: 18px;
+    line-height: 1.5;
+    display: none;
+    padding-bottom: 30px;
+}
+
+.ms-holiday-fill {
+    padding: 100px 0px 100px 0px;
+    text-align: center;
+}
+
+.ms-holiday-fill-h1 {
+    font-size: 80px;
+}
+
+.ms-holiday-fill-h2 {
+    font: normal 40px "BloggerSansBold";
+    line-height: 1.1;
+    margin-bottom: 40px;
+}
+
+.ms-holiday-fill-block {
+    border: solid 1px #dcd2c8;
+    border-radius: 10px;
+    width: 400px;
+    padding: 50px 40px 45px 40px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 60px 100px 0px;
+    text-align: left;
+}
+
+.ms-holiday-fill-block:last-child {
+    margin-right: 0px;
+}
+
+.ms-holiday-fill-block .ms-button {
+    margin-top: 20px;
+}
+
+.ms-holiday-fill-block-h1 {
+    font: normal 40px "BloggerSansBold";
+    color: #00b4ce;
+    margin-bottom: 25px;
+}
+
+.ms-holiday-fill-block-time {
+    font-size: 24px;
+    line-height: 1.2;
+    color: #00b4ce;
+    background: url(../svg/ico_time.svg) no-repeat left top;
+    padding-left: 75px;
+    min-height: 110px;
+    margin-bottom: 15px;
+}
+
+.ms-holiday-fill-block-about {
+    font-size: 18px;
+    min-height: 310px;
+    margin-bottom: 15px;
+}
+
+.ms-holiday-fill-block-price {
+    font: normal 44px "BloggerSansBold";
+    margin-top: 25px;
+}
+
+.fill-standard {
+    background: #f2eae2;
+    border: none;
+}
+
+.fill-standard .ms-holiday-fill-block-h1,
+.fill-standard .ms-holiday-fill-block-time {
+    color: #dc0e85
+}
+
+.fill-standard .ms-holiday-fill-block-time {
+    background-image: url(../svg/ico_time_pink.svg);
+}
+
+
+/*works*/
+
+.ms-works-block {
+    width: 420px;
+    margin: 0px 30px 30px 0px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.ms-works-block a:last-child {
+    font-size: 22px;
+}
+
+.ms-works-block-pic {
+    width: 420px;
+    height: 300px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.ms-works-block-photos {
+    background: url(../svg/ico_photo.svg) no-repeat left center;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    padding-left: 50px;
+    font: normal 28px "BloggerSansBold";
+    color: #fff;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.ms-work {
+    background: #f5f5f5;
+    padding: 70px 0px 80px 0px;
+}
+
+.ms-work h1 {
+    margin: 30px 0px 25px 0px;
+}
+
+.ms-work-pix img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.ms-work-h2,
+.ms-work-h3 {
+    font: normal 40px "BloggerSansBold";
+    line-height: 1.2;
+}
+
+.ms-work-h3 {
+    margin: 70px 0px 25px 0px;
+}
+
+.ms-work-about {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    max-width: 700px;
+}
+
+.ms-work-pix {
+    margin-top: 45px;
+}
+
+.ms-info img {
+    max-width: 100%;
+}
+
+.ms-info-back {
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.ms-info-back a {
+    font-size: 18px;
+    color: #dc0e85;
+}
+
+@media (min-width:992px) and (max-width:1440px) {
+    .container {
+        width: 1170px;
+    }
+    .ms-index-holidays-block-pic {
+        width: 580px;
+        height: 405px;
+    }
+    .ms-index-calc {
+        padding: 60px 0px 50px 0px;
+    }
+    .ms-index-calc-form-in {
+        padding: 30px 50px 30px 50px;
+    }
+    .ms-index-calc-h1 {
+        padding-left: 60px;
+    }
+    .ms-index-calc-form-block {
+        padding-right: 40px;
+    }
+    .ms-index-insta-block {
+        width: 18%;
+    }
+    .ms-index-insta-pic {
+        width: 100%;
+        height: 180px;
+    }
+}
+
+@media (max-width:992px) {}
+
+@media (max-width:992px) and (max-height:460px) {}
+
+@media (min-width:992px) and (max-width:1200px) {}
+
+
+/* adaptive */
+
+.ms-top-phone-order a {
+    text-decoration: none;
+}
+
+.only-mobile {
+        display: none;
+    }
+
+.works-wrap {
+    text-align: center;
+}
+
+.works-cont {
+    text-align: center;
+}
+
+.ms-index-video-file {
+    
+    opacity: 1;
+}
+
+.ms-index-video::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../img/pattern.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.white-main-text {
+    color: white;
+}
+
+@media (max-width: 1500px) {
+    .ms-index-calc .container {
+        width: 100%;
+    }
+    .ms-index-banner-vector {
+        overflow: hidden;
+    }
+    .ms-index-banner-vector-cert {
+        margin-top: -6px;
+    }
+    .ms-holiday-fill-block {
+    border: solid 1px #dcd2c8;
+    border-radius: 10px;
+    width: 30%;
+    padding: 50px 10px 45px 20px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 18px 100px 0px;
+    text-align: left;
+}
+
+
+.ms-works-block {
+    width: 29%;
+}
+
+.ms-works-block .ms-works-block-pic {
+    width: 100%;
+}
+}
+
+@media (max-width: 1200px) {
+    .container {
+        width: 95%;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+    }
+    .ms-index-services-block {
+        padding-right: 20px;
+    }
+    .ms-index-banner-pic {
+        min-height: 840px;
+    }
+    .ms-index-banner-vector-call {
+        float: none;
+        margin-top: 0;
+    }
+    .ms-index-holidays-block-pic {
+        width: 95%;
+        height: 30vw;
+    }
+    .ms-index-calc-h1 {
+        background: url(../svg/ico_calc.svg) no-repeat 100% center;
+    }
+    .ms-index-center-r {
+        padding-left: 25px;
+    }
+    .ms-button,
+    input[type=button],
+    input[type=submit] {
+        padding: 13px 26px 13px 26px;
+    }
+    .ms-index-center-more-adress {
+        font-size: 45px;
+    }
+    .ms-index-calc-call {
+        height: auto;
+        padding: 33px 15px 20px 15px;
+    }
+
+    .ms-holiday-fill-block-h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .ms-top-menu {
+        width: calc(90% - 165px);
+    }
+    .ms-top-logo {
+        width: 165px;
+    }
+    .ms-top-phone {
+        width: 100%;
+        padding-top: 0;
+    }
+    .ms-bottom div {
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+    .ms-bottom-menu {
+        margin-left: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .ms-index-banner-pic {
+        position: absolute;
+    }
+    .ms-index-banner-vector-content {
+        position: relative;
+    }
+    .ms-index-calc-h1 {
+        background: none;
+    }
+    .ms-index-calc-call {
+        height: auto;
+        padding: 33px 15px 20px 15px;
+    }
+    h1,
+    .ms-index-services-h1,
+    .ms-index-holidays-h1,
+    .ms-index-make-h1,
+    .ms-index-center-h1,
+    .ms-index-team-h1,
+    .ms-index-insta-h1,
+    .ms-index-opinions-h1,
+    .ms-index-contacts-h1,
+    .ms-holiday-comp-h1,
+    .ms-holiday-goes-h1,
+    .ms-holiday-faq-h1,
+    .ms-holiday-fill-h1 {
+        font-size: 70px;
+    }
+    .ms-index-center-more-l,
+    .ms-index-center-more-r {
+        width: 100%;
+    }
+    .ms-index-center-more-r {
+        padding-top: 15px;
+    }
+    .ms-index-team-block-speach {
+        font-size: 22px;
+    }
+    .ms-index-insta-r {
+        padding-left: 20px;
+    }
+    .ms-index-calc-h1 {
+        padding-left: 0;
+    }
+
+    .ms-holiday-goes-video {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .ms-index-calc-form-in {
+        padding: 35px 30px 31px 30px;
+    }
+    .ms-index-insta-l,
+    .ms-index-insta-r {
+        width: 100%;
+    }
+    .ms-holiday-fill-block { 
+        width: 45%;
+    }
+
+    .ms-works-block {
+        width: 45%;
+    }
+}
+
+@media (max-width: 800px) {
+    .ms-index-services-block {
+        width: 50%;
+        margin-top: 20px;
+    }
+    .ms-index-banner-vector-list {
+        margin-top: 135px;
+    }
+    .ms-index-banner-vector-price {
+        font-size: 50px;
+    }
+    .ms-index-calc-h1 {
+        font-size: 50px;
+    }
+    .ms-index-calc-form-block {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .ms-index-center-r {
+        width: 100%;
+    }
+    .ms-index-center-more-l {
+        width: 80%;
+    }
+    .ms-index-center-more-adress a {
+        line-height: 1.3;
+    }
+    .ms-index-team-block-pic {
+        background-position: center center;
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        position: relative;
+        border-radius: 50%;
+    }
+    .ms-index-opinions-r {
+        width: 100%;
+    }
+    .ms-index-opinions-l {
+        width: 100%;
+    }
+    .ms-index-opinions-quote {
+        right: 0;
+    }
+
+    .overlay-done-action {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .ms-holiday-faq-in {
+        width: 100%;
+    }
+
+    .ms-holiday-recall-form .ms-button {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .reverse a {
+        text-decoration: none;
+        padding: 5px;
+        display: inline-block;
+    }
+    .ms-top-phone .ms-top-recall {
+        display: none;
+    }
+    .ms-logo,
+    .ms-top-logo {
+        width: 95px;
+        height: 65px;
+    }
+    .ms-top-menu {
+        width: calc(90% - 55px);
+    }
+    .ms-top-menu {
+        padding-top: 0px;
+        padding-left: 15px;
+        text-align: center;
+    }
+    .ms-top-phone {
+        width: calc(100% - 105px);
+        padding-top: 0;
+        text-align: center;
+        margin-left: 105px;
+    }
+    .ms-index-banner-vector-h1 {
+        font: normal 60px "BloggerSansBold";
+    }
+    .ms-index-banner-vector-price {
+        font-size: 40px;
+    }
+    .ms-index-banner-vector-cert {
+        margin-top: 20px;
+        line-height: 1.2;
+    }
+
+ 
+}
+
+@media (max-width: 600px) {
+    .ms-top-menu {
+        width: 100%;
+        padding-left: 0;
+        display: none;
+    }
+    .ms-top-menu a {
+        display: block;
+        margin: 10px;
+    }
+    .ms-top-phone-order span {
+        display: none;
+    }
+    .ms-top-phone {
+        width: 167px;
+        padding-top: 0;
+        text-align: left;
+        margin-left: 17px;
+        font-size: 12px;
+    }
+    .ms-navi {
+        display: none;
+    }
+    .ms-index-video-file {
+        display: none;
+    }
+    .ms-index-video {
+        background: url(../img/bg.jpg) 50% 50% no-repeat;
+        background-size: cover;
+        height: 200px;
+    }
+    .ms-index-services {
+        padding-top: 40px;
+    }
+    h1,
+    .ms-index-services-h1,
+    .ms-index-holidays-h1,
+    .ms-index-make-h1,
+    .ms-index-center-h1,
+    .ms-index-team-h1,
+    .ms-index-insta-h1,
+    .ms-index-opinions-h1,
+    .ms-index-contacts-h1,
+    .ms-holiday-comp-h1,
+    .ms-holiday-goes-h1,
+    .ms-holiday-faq-h1,
+    .ms-holiday-fill-h1 {
+        font-size: 40px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .ms-index-services-block {
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+        padding-right: 0;
+        background-position: 50% 30px;
+    }
+    .ms-index-services-block:last-child {
+        background-position: 50% 30px !important;
+    }
+    .ms-index-banner {
+        padding-top: 0;
+    }
+    .ms-index-banner-vector-content {
+        padding: 20px;
+    }
+    .ms-index-banner-vector-when {
+        font-size: 25px;
+    }
+    .ms-index-banner-vector-h1 {
+        font-size: 35px;
+    }
+    .ms-index-banner-vector-list {
+        font-size: 18px;
+    }
+    .ms-index-banner-vector-cert {
+        margin-top: 20px;
+        line-height: 1.2;
+        width: 246px;
+        font-size: 18px;
+        padding-top: 37px;
+    }
+    .ms-index-banner-vector-list {
+        margin-top: 170px;
+    }
+    .ms-index-banner-vector-price span {
+        display: block;
+    }
+    .ms-index-banner-vector-price {
+        font-size: 34px;
+    }
+    .ms-index-banner-vector-call {
+        font-size: 18px;
+    }
+    .ms-index-holidays {
+        padding-top: 10px;
+    }
+    .ms-index-holidays-more {
+        font-size: 18px;
+    }
+    .ms-index-holidays-block {
+        margin-bottom: 20px;
+    }
+    .ms-index-holidays-block a:last-child {
+        font-size: 19px;
+    }
+    .ms-index-holidays {
+        padding-bottom: 40px;
+    }
+    .ms-index-calc {
+        padding: 20px;
+    }
+    .ms-index-calc-h1 {
+        font-size: 39px;
+    }
+    .ms-index-calc-form-arrow {
+        left: 50%;
+    }
+    .ms-index-calc-form-block {
+        padding-right: 0;
+    }
+    .ms-index-calc-call-form input[type=text] {
+        width: 200px;
+        margin: 10px 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .ms-index-team-block-pic {
+        width: 100px;
+        height: 100px;
+    }
+    .ms-index-make {
+        text-align: center;
+    }
+    .ms-index-make-block {
+        margin-right: 0;
+    }
+    .ms-index-center {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .ms-index-center-l,
+    .ms-index-center-r {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        margin: 30px 0px 10px 0px;
+    }
+    .ms-index-center-r {
+        padding-left: 0;
+    }
+    .ms-index-center-more-l {
+        width: 100%;
+    }
+    .ms-index-center-more-l {
+        width: 100%;
+        margin-top: 45px;
+        text-align: center;
+    }
+    .ms-index-center-more-adress {
+        font-size: 34px;
+    }
+    .ms-index-center-more-r {
+        padding-left: 0;
+        font-size: 16px;
+    }
+    .ms-index-team {
+        padding: 40px 0px 40px 0px;
+    }
+    .ms-index-team-block-quote {
+        display: none;
+    }
+    .ms-index-team-block {
+        float: left;
+        width: 100%;
+        padding-right: 0;
+        padding: 0 10px;
+        text-align: center;
+    }
+    .ms-index-team-block-speach {
+        margin-top: 15px;
+    }
+    .ms-index-team-block:not(:first-child) {
+        margin-top: 60px;
+    }
+    .ms-index-insta {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .ms-index-insta-l {
+        font-size: 28px;
+    }
+    .ms-index-insta-r {
+        padding-left: 0;
+    }
+    .ms-index-insta-block {
+            margin-right: 4px;
+    width: 40vw;
+    height: 40vw;
+    }
+
+    .ms-index-insta-pic {
+        width: 100%;
+        height: 100%;
+    }
+
+    .ms-index-opinions {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .ms-index-opinions-quote {
+        display: none;
+    }
+    .ms-index-opinions-l {
+        margin-bottom: 20px;
+    }
+    .ms-index-opinions-r {
+        padding-left: 0;
+    }
+    .ms-index-opinions-text {
+        width: 100%;
+    }
+    .ms-index-opinions-r {
+        margin-bottom: 30px;
+    }
+    .ms-index-contacts {
+        padding-top: 30px;
+    }
+    .ms-index-contacts-text {
+        font-size: 22px;
+        margin-bottom: 40px;
+        line-height: 1.3;
+        padding: 0 10px;
+    }
+
+    #map {
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .ms-index-calc-form-arrow {
+        display: none;
+    }
+
+    .ms-bottom-menu a {
+        display: block;
+    width: 100%;
+    margin-top: 12px;
+    }
+
+    .not-mobile {
+        display: none;
+    }
+
+    .only-mobile {
+        display: block;
+    }
+
+    .mobile-header {
+        background: #00b4ce;
+        padding: 40px 20px;
+    }
+
+    .mobile-header__h1 {
+        font-size: 48px;
+        text-align: left;
+        color: white;
+        margin-top: 10px;
+    }
+
+    .mobile-header__text {
+            font-size: 18px;
+    color: white;
+    }
+
+    .mobile-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: white;
+        z-index: 600;
+    }
+
+    #content {
+        margin-top: 60px;
+    }
+
+    .mobile-top__h2 {
+        margin: 0;
+        padding: 0;
+            font-weight: normal;
+    font-size: 20px;
+
+    }
+
+    .mobile-top__menu {
+            display: block;
+    background: #dc0e85;
+    height: 60px;
+    width: 60px;
+    position: relative;
+    }
+
+    .mobile-top__decor {
+        position: absolute;
+        top: 11px;
+        left: 10%;
+        width: 80%;
+        height: 8px;
+        background: white;
+        border-radius: 4px;
+        transition: all 0.3s;
+    }
+
+     .mobile-top__decor:nth-of-type(2) {
+        top: 26px;
+     }
+
+     .mobile-top__decor:nth-of-type(3) {
+        top: 41px;
+     }
+
+
+    .mobile-top__wrap {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+    }
+
+    .mobile-top__tel {
+        color: #dc0e85;
+        text-decoration: none !important;
+        font-size: 18px;
+        display: block;
+        margin-top: 4px;
+    }
+
+    .mobile-top__content {
+        padding-left: 24px;
+        padding-top: 6px;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: #dc0e85;
+        transition: all 0.8s;
+        height: calc(100vh - 60px);
+        -webkit-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+                transform: translateX(-100%);
+
+    }
+
+    .mobile-menu__list {
+        list-style: none;
+        padding-left: 60px;
+    }
+
+
+    .mobile-menu__list li a {
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+    }
+
+     .mobile-menu__list li a:hover {
+        text-decoration: underline;
+     }
+
+     .mobile-menu__list li {
+        margin-top: 15px;
+     }
+
+     .overlay-block {
+    width: 80%;
+    background: #fff;
+    background: #f2ebe2;
+    padding: 40px 10px;
+    position: relative;
+    text-align: center;
+    border-radius: 8px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.overlay-h1 {
+    font: normal 25px "BloggerSansBold";
+    line-height: 22px;
+}
+
+.overlay-block input[type=text] {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.overlay-block .ms-button {
+    width: 100%;
+}
+
+.mobile-open .mobile-menu {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+}
+
+.mobile-open .mobile-top__decor:nth-of-type(2) {
+    opacity: 0;
+}
+
+.mobile-open .mobile-top__decor:nth-of-type(1) { 
+    -webkit-transform: rotate(45deg) translate(7px, 9px); 
+        -ms-transform: rotate(45deg) translate(7px, 9px); 
+            transform: rotate(45deg) translate(7px, 9px);
+}
+
+.mobile-open .mobile-top__decor:nth-of-type(3) { 
+    -webkit-transform: rotate(-45deg) translate(12px, -14px); 
+        -ms-transform: rotate(-45deg) translate(12px, -14px); 
+            transform: rotate(-45deg) translate(12px, -14px);
+}
+
+.ms-works-block {
+    width: 100%;
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.reverse a {
+    text-decoration: none;
+    padding: 5px;
+    display: inline-block;
+    width: 100%;
+}
+
+.ms-works-block-pic {
+    width: 100%;
+}
+
+.ms-work-h2 {
+    text-align: center;
+}
+
+.ms-holiday-video-text {
+    padding-top: 30px;
+}
+
+.ms-holiday-recall input[type=text] {
+    margin: 0px 30px 0px 0px;
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 0;
+}
+
+
+
+
+.ms-holiday-comp {
+    padding-top: 20px;
+}
+
+.ms-holiday-video-text h1 {
+    font-size: 30px;
+}
+
+.ms-holiday-comp-block {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.ms-holiday-comp-pic, .ms-holiday-goes-pic {
+    width: 100%;
+    height: 100vw;
+    margin-top: 5px;
+}
+
+.ms-holiday-fill-block {
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 0;
+}
+
+.overlay-done-sub {
+    padding: 20px;
+}
+
+.overlay-done-top {
+    padding: 20px;
+}
+
+.overlay-done-sub-form input{
+    margin-top: 10px;
+}
+
+.overlay-done-top-h1 {
+    font-size: 40px;
+}
+}
+
+
+/* adaptive end */
