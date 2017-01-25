@@ -350,6 +350,7 @@ input[type=submit] {
     vertical-align: middle;
 }
 
+/*
 .ms-button.disabled,
 input[type=button].disabled,
 input[type=submit].disabled {
@@ -359,6 +360,7 @@ input[type=submit].disabled {
     opacity: 1 !important;
     cursor: auto;
 }
+*/
 
 .ms-title {
     font: normal 44px "BloggerSansBold";
